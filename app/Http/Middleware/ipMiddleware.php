@@ -17,7 +17,7 @@ class ipMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (request()->ip() != "127.0.0.1") {
-            abort(403, 'Access denided.');
+            abort(403, 'No');
         }
 
         return $next($request);
