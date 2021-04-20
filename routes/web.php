@@ -1,7 +1,9 @@
 <?php
 
 
+use App\Http\Controllers\ipController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\palindromController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,6 @@ Route::get('/phpinfo', function () {
     phpinfo();
 });
 
-Route::get('ip', 'App\Http\Controllers\ipController@ip');
+Route::get('ip', [ipController::class,'ip']);
 
-Route::get('palindrom/{text}', 'App\Http\Controllers\palindromController@palindrom')->middleware('IP');
+Route::get('palindrom/{text}', [palindromController::class, 'palindrom'])->middleware('IP');
